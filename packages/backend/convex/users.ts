@@ -4,12 +4,6 @@ import { query, mutation } from "./_generated/server.js";
 export const getMany = query({
   args: {},
   handler: async (ctx) => {
-    const identity = await ctx.auth.getUserIdentity();
-
-    if (!identity) {
-      throw new Error("Not authenticated");
-    }
-
     const users = await ctx.db.query("users").collect();
     return users;
   },
