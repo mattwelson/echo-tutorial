@@ -1,3 +1,7 @@
+if (!process.env.CLERK_JWT_ISSUER_DOMAIN) {
+  throw new Error("CLERK_JWT_ISSUER_DOMAIN environment variable is required");
+}
+
 export default {
     providers: [
       {
