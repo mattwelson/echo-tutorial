@@ -20,6 +20,12 @@ export const add = mutation({
       throw new Error("Not authenticated");
     }
 
+    const orgId = identity.organizationId;
+
+    if (!orgId) {
+      throw new Error("No organization id");
+    }
+
     const userId = await ctx.db.insert("users", {
       name: args.name,
     });
@@ -27,3 +33,10 @@ export const add = mutation({
     return userId;
   },
 });
+
+// This has been added to the jwt template from clerk
+declare module "convex/server" {
+  interface UserIdentity {
+    organizationId?: string;
+  }
+}
