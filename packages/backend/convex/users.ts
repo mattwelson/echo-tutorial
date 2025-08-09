@@ -20,6 +20,7 @@ export const add = mutation({
       throw new Error("Not authenticated");
     }
 
+    console.log({ identity });
     const orgId = identity.organizationId;
 
     if (!orgId) {
