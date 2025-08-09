@@ -1,12 +1,11 @@
 "use client";
 
 import { Button } from "@workspace/ui/components/button";
-import { useQuery, useMutation } from "convex/react";
+import { useMutation } from "convex/react";
 import { api } from "@workspace/backend/_generated/api";
-import { UserButton } from "@clerk/nextjs";
+import { OrganizationSwitcher, UserButton } from "@clerk/nextjs";
 
 export default function Page() {
-  const users = useQuery(api.users.getMany);
   const addUser = useMutation(api.users.add);
 
   return (
@@ -14,12 +13,10 @@ export default function Page() {
       <div className="flex flex-col items-center justify-center gap-4">
         <h1 className="text-2xl font-bold">Hello World</h1>
         <UserButton />
+        <OrganizationSwitcher hidePersonal />
         <Button size="sm" onClick={() => addUser({ name: "John Doe" })}>
           Add
         </Button>
-        <pre className="max-w-md w-full mx-auto">
-          {JSON.stringify(users, null, 2)}
-        </pre>
       </div>
     </div>
   );
