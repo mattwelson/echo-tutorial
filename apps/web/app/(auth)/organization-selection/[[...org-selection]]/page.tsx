@@ -1,5 +1,5 @@
-import { OrganisationSelectionView } from "@/modules/auth/ui/views/organisation-selection-view";
+import { OrganizationSelectionView } from "@/modules/auth/ui/views/organization-selection-view";
 
 export default function OrganizationSelectionPage() {
-  return <OrganisationSelectionView />;
+  return <OrganizationSelectionView />;
 }

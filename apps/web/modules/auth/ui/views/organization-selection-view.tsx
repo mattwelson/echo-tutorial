@@ -1,6 +1,6 @@
 import { OrganizationList } from "@clerk/nextjs";
 
-export function OrganisationSelectionView() {
+export function OrganizationSelectionView() {
   return (
     <OrganizationList
       afterCreateOrganizationUrl="/"
