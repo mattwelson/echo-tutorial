@@ -41,6 +41,9 @@ importers:
       convex:
         specifier: ^1.25.4
         version: 1.25.4(@clerk/clerk-react@5.38.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)
+      import-in-the-middle:
+        specifier: ^1.14.2
+        version: 1.14.2
       lucide-react:
         specifier: ^0.475.0
         version: 0.475.0(react@19.0.0)
@@ -56,6 +59,9 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
+      require-in-the-middle:
+        specifier: ^7.5.2
+        version: 7.5.2
     devDependencies:
       '@types/node':
         specifier: ^20
@@ -5895,7 +5901,7 @@ snapshots:
 
   acorn-walk@8.3.4:
     dependencies:
-      acorn: 8.14.0
+      acorn: 8.15.0
 
   acorn@8.14.0: {}
 
