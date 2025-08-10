@@ -3,6 +3,7 @@
   "editor.formatOnSave": true,
   "conventionalCommits.scopes": [
     "organization",
-    "web/ui"
+    "web/ui",
+    "error"
   ]
 }
