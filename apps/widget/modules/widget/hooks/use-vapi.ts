@@ -15,11 +15,5 @@ export function useVapi() {
     // Actions
     startCall: () => send({ type: "START_CALL" }),
     stopCall: () => send({ type: "STOP_CALL" }),
-
-    // For debugging
-    currentState: state.value,
-
-    // Raw state for debugging
-    state,
   };
 }
