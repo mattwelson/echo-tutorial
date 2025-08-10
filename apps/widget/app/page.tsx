@@ -12,7 +12,11 @@ export default function Page() {
     transcript,
     startCall,
     stopCall,
+    state,
+    currentState,
   } = useVapi();
+
+  console.log({ state, currentState });
 
   return (
     <div className="flex items-center justify-center min-h-svh">
