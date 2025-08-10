@@ -78,6 +78,9 @@ importers:
 
   apps/widget:
     dependencies:
+      '@vapi-ai/web':
+        specifier: ^2.3.8
+        version: 2.3.8
       '@workspace/backend':
         specifier: workspace:*
         version: link:../../packages/backend
@@ -312,6 +315,10 @@ packages:
     resolution: {integrity: sha512-5EVjbTegqN7RSJle6hMWYxO4voo4rI+9krITk+DWR+diJgGrjZjrIBnJhjrHYYQsFgI7j1w1QnrvV7YSKBfYGg==}
     engines: {node: '>=6.9.0'}
 
+  '@babel/runtime@7.28.2':
+    resolution: {integrity: sha512-KHp2IflsnGywDjBWDkR9iEqiWSpc8GIi0lgTT3mOElT0PP1tG26P4tmFI2YvAdzgq9RGyoHZQEIEdZy6Ec5xCA==}
+    engines: {node: '>=6.9.0'}
+
   '@babel/template@7.27.2':
     resolution: {integrity: sha512-LPDZ85aEJyYSd18/DkjNh4/y1ntkE5KwUHWTiqgRxruuZL2F1yuHligVHLvcHY2vMHXttKFpJn6LwfI7cw7ODw==}
     engines: {node: '>=6.9.0'}
@@ -362,6 +369,10 @@ packages:
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
     engines: {node: '>=12'}
+
+  '@daily-co/daily-js@0.80.0':
+    resolution: {integrity: sha512-zG2NBbKbHfm56P0lg4ddC94vBtn5AQKcgvbYrO5+ohNWPSolMqlJiYxQC9uhOHfFYRhH4ELKQ6NHqGatX9VD7A==}
+    engines: {node: '>=10.0.0'}
 
   '@emnapi/runtime@1.4.5':
     resolution: {integrity: sha512-++LApOtY0pEEz1zrd9vy1/zXVaVJJ/EbAF3u0fXIzPJEDtnITsBGbbK0EkM72amhl/R5b+5xx0Y/QhcVOpuulg==}
@@ -1120,17 +1131,33 @@ packages:
     resolution: {integrity: sha512-jKBoNMmxMgojzcpIsUqVk6XL6YiW0i8jtNdD9UdBKd8ExFpVkXhPuMdWB9f/5mVNK/9BnfI74eTiEVHZEkeZ6Q==}
     engines: {node: '>=18'}
 
+  '@sentry-internal/browser-utils@8.55.0':
+    resolution: {integrity: sha512-ROgqtQfpH/82AQIpESPqPQe0UyWywKJsmVIqi3c5Fh+zkds5LUxnssTj3yNd1x+kxaPDVB023jAP+3ibNgeNDw==}
+    engines: {node: '>=14.18'}
+
   '@sentry-internal/feedback@10.3.0':
     resolution: {integrity: sha512-HGvBoUwbj164I/66vrtUjHICuqwcY5RIGAAutD+H+EwhUROpFuzaIe9utIalhyU9CrTN/vFs4UYPWmeOpqg2lQ==}
     engines: {node: '>=18'}
+
+  '@sentry-internal/feedback@8.55.0':
+    resolution: {integrity: sha512-cP3BD/Q6pquVQ+YL+rwCnorKuTXiS9KXW8HNKu4nmmBAyf7urjs+F6Hr1k9MXP5yQ8W3yK7jRWd09Yu6DHWOiw==}
+    engines: {node: '>=14.18'}
 
   '@sentry-internal/replay-canvas@10.3.0':
     resolution: {integrity: sha512-JGE1YmWb5LYhnaEgaYVMKj03FCQsuvALF2RXJx+Qe8pPwWtEWWBXMFEIt714mv4mO3YQxZnnxQhxFRuSJqXQfQ==}
     engines: {node: '>=18'}
 
+  '@sentry-internal/replay-canvas@8.55.0':
+    resolution: {integrity: sha512-nIkfgRWk1091zHdu4NbocQsxZF1rv1f7bbp3tTIlZYbrH62XVZosx5iHAuZG0Zc48AETLE7K4AX9VGjvQj8i9w==}
+    engines: {node: '>=14.18'}
+
   '@sentry-internal/replay@10.3.0':
     resolution: {integrity: sha512-SVF7mMDW++LaeaONyxFUQ2Na3aMv6vyhv9V5Yb6yHWgPXI8NCW83mJ/MidHDD3yI0bccgTJUEmB4S0vBioafzg==}
     engines: {node: '>=18'}
+
+  '@sentry-internal/replay@8.55.0':
+    resolution: {integrity: sha512-roCDEGkORwolxBn8xAKedybY+Jlefq3xYmgN2fr3BTnsXjSYOPC7D1/mYqINBat99nDtvgFvNfRcZPiwwZ1hSw==}
+    engines: {node: '>=14.18'}
 
   '@sentry/babel-plugin-component-annotate@4.0.2':
     resolution: {integrity: sha512-Nr/VamvpQs6w642EI5t+qaCUGnVEro0qqk+S8XO1gc8qSdpc8kkZJFnUk7ozAr+ljYWGfVgWXrxI9lLiriLsRA==}
@@ -1139,6 +1166,10 @@ packages:
   '@sentry/browser@10.3.0':
     resolution: {integrity: sha512-n0jROCST6XJhU7okSn04uRGFK4FjJZNjVR8nDSi/A6gU7VxVAs3iva5SUykXGFQKSVaXVE8kKjS6BtKfllulQA==}
     engines: {node: '>=18'}
+
+  '@sentry/browser@8.55.0':
+    resolution: {integrity: sha512-1A31mCEWCjaMxJt6qGUK+aDnLDcK6AwLAZnqpSchNysGni1pSn1RWSmk9TBF8qyTds5FH8B31H480uxMPUJ7Cw==}
+    engines: {node: '>=14.18'}
 
   '@sentry/bundler-plugin-core@4.0.2':
     resolution: {integrity: sha512-LeARs8qHhEw19tk+KZd9DDV+Rh/UeapIH0+C09fTmff9p8Y82Cj89pEQ2a1rdUiF/oYIjQX45vnZscB7ra42yw==}
@@ -1199,6 +1230,10 @@ packages:
   '@sentry/core@10.3.0':
     resolution: {integrity: sha512-FEFCqiGkzJrm6TNJvhyjhc4rpC1Kmo/abYOACRd6MLvm8GBz41eFFKxsNxGZAUA3Fk1tR2mPfXIHOJzS0ulVww==}
     engines: {node: '>=18'}
+
+  '@sentry/core@8.55.0':
+    resolution: {integrity: sha512-6g7jpbefjHYs821Z+EBJ8r4Z7LT5h80YSWRJaylGS4nW5W5Z2KXzpdnyFarv37O7QjauzVC2E+PABmpkw5/JGA==}
+    engines: {node: '>=14.18'}
 
   '@sentry/nextjs@10.3.0':
     resolution: {integrity: sha512-oyvkabOWYb/ZlGXeNTaHQkX/exVkutJ+YmOaUvp/t2faECJbwUnegVAZzbk1qJoo7WPdKYhdtDCT1W2wD/4CLw==}
@@ -1459,6 +1494,10 @@ packages:
     resolution: {integrity: sha512-EwVHlp5l+2vp8CoqJm9KikPZgi3gbdZAtabKT9KPShGeOcJhsv4Zdo3oc8T8I0uKEmYoU4ItyxbptjF08enaxg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
+  '@vapi-ai/web@2.3.8':
+    resolution: {integrity: sha512-qSXkRds9d3EkMPO/mbQ9DHSI/OIx2TU3JNtRhWPGJgGJ4BvJIta3ZdD19yCP/zPS6/4Y3ocm3VYW507HM9uY/A==}
+    engines: {node: '>=18.0.0'}
+
   '@webassemblyjs/ast@1.14.1':
     resolution: {integrity: sha512-nuBEDgQfm1ccRp/8bCQrx1frohyufl4JlbMMZ4P1wpeOfDhF6FQkxZJ1b/e+PLwr6X1Nhw6OLme5usuBWYBvuQ==}
 
@@ -1657,6 +1696,9 @@ packages:
 
   bl@4.1.0:
     resolution: {integrity: sha512-1W07cM9gS6DcLperZfFSj+bWLtaPGSOHWhPiGzXmvVJbRLdG82sH/Kn8EtW1VqWVA54AKf2h5k5BbnIbwF3h6w==}
+
+  bowser@2.12.0:
+    resolution: {integrity: sha512-HcOcTudTeEWgbHh0Y1Tyb6fdeR71m4b/QACf0D4KswGTsNeIJQmg38mRENZPAYPZvGFN3fk3604XbQEPdxXdKg==}
 
   brace-expansion@1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
@@ -3757,6 +3799,8 @@ snapshots:
       core-js-pure: 3.40.0
       regenerator-runtime: 0.14.1
 
+  '@babel/runtime@7.28.2': {}
+
   '@babel/template@7.27.2':
     dependencies:
       '@babel/code-frame': 7.27.1
@@ -3830,6 +3874,14 @@ snapshots:
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
+
+  '@daily-co/daily-js@0.80.0':
+    dependencies:
+      '@babel/runtime': 7.28.2
+      '@sentry/browser': 8.55.0
+      bowser: 2.12.0
+      dequal: 2.0.3
+      events: 3.3.0
 
   '@emnapi/runtime@1.4.5':
     dependencies:
@@ -4476,19 +4528,37 @@ snapshots:
     dependencies:
       '@sentry/core': 10.3.0
 
+  '@sentry-internal/browser-utils@8.55.0':
+    dependencies:
+      '@sentry/core': 8.55.0
+
   '@sentry-internal/feedback@10.3.0':
     dependencies:
       '@sentry/core': 10.3.0
+
+  '@sentry-internal/feedback@8.55.0':
+    dependencies:
+      '@sentry/core': 8.55.0
 
   '@sentry-internal/replay-canvas@10.3.0':
     dependencies:
       '@sentry-internal/replay': 10.3.0
       '@sentry/core': 10.3.0
 
+  '@sentry-internal/replay-canvas@8.55.0':
+    dependencies:
+      '@sentry-internal/replay': 8.55.0
+      '@sentry/core': 8.55.0
+
   '@sentry-internal/replay@10.3.0':
     dependencies:
       '@sentry-internal/browser-utils': 10.3.0
       '@sentry/core': 10.3.0
+
+  '@sentry-internal/replay@8.55.0':
+    dependencies:
+      '@sentry-internal/browser-utils': 8.55.0
+      '@sentry/core': 8.55.0
 
   '@sentry/babel-plugin-component-annotate@4.0.2': {}
 
@@ -4499,6 +4569,14 @@ snapshots:
       '@sentry-internal/replay': 10.3.0
       '@sentry-internal/replay-canvas': 10.3.0
       '@sentry/core': 10.3.0
+
+  '@sentry/browser@8.55.0':
+    dependencies:
+      '@sentry-internal/browser-utils': 8.55.0
+      '@sentry-internal/feedback': 8.55.0
+      '@sentry-internal/replay': 8.55.0
+      '@sentry-internal/replay-canvas': 8.55.0
+      '@sentry/core': 8.55.0
 
   '@sentry/bundler-plugin-core@4.0.2':
     dependencies:
@@ -4559,6 +4637,8 @@ snapshots:
       - supports-color
 
   '@sentry/core@10.3.0': {}
+
+  '@sentry/core@8.55.0': {}
 
   '@sentry/nextjs@10.3.0(@opentelemetry/context-async-hooks@2.0.1(@opentelemetry/api@1.9.0))(@opentelemetry/core@2.0.1(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.0.1(@opentelemetry/api@1.9.0))(next@15.4.2-canary.30(@babel/core@7.28.0)(@opentelemetry/api@1.9.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)(webpack@5.101.0)':
     dependencies:
@@ -4930,6 +5010,11 @@ snapshots:
       '@typescript-eslint/types': 8.24.1
       eslint-visitor-keys: 4.2.0
 
+  '@vapi-ai/web@2.3.8':
+    dependencies:
+      '@daily-co/daily-js': 0.80.0
+      events: 3.3.0
+
   '@webassemblyjs/ast@1.14.1':
     dependencies:
       '@webassemblyjs/helper-numbers': 1.13.2
@@ -5169,6 +5254,8 @@ snapshots:
       buffer: 5.7.1
       inherits: 2.0.4
       readable-stream: 3.6.2
+
+  bowser@2.12.0: {}
 
   brace-expansion@1.1.11:
     dependencies:

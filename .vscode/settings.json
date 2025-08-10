@@ -4,6 +4,7 @@
   "conventionalCommits.scopes": [
     "organization",
     "web/ui",
-    "error"
+    "error",
+    "vapi"
   ]
 }
