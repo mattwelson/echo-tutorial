@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@workspace/ui/lib/utils";
 import { ReactNode } from "react";
 
