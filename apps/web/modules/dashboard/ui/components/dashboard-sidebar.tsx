@@ -91,6 +91,7 @@ export function DashboardSidebar() {
                     asChild
                     tooltip={item.title}
                     isActive={isActive(item.url)}
+                    variant="gradient"
                   >
                     <Link href={item.url}>
                       <item.icon className="size-4" />
@@ -112,6 +113,7 @@ export function DashboardSidebar() {
                     asChild
                     tooltip={item.title}
                     isActive={isActive(item.url)}
+                    variant="gradient"
                   >
                     <Link href={item.url}>
                       <item.icon className="size-4" />
@@ -133,6 +135,7 @@ export function DashboardSidebar() {
                     asChild
                     tooltip={item.title}
                     isActive={isActive(item.url)}
+                    variant="gradient"
                   >
                     <Link href={item.url}>
                       <item.icon className="size-4" />
