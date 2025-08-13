@@ -2,7 +2,7 @@
 
 import { WidgetAuthScreen } from "../screens/widget-auth-screen";
 
-export function WidgetView({ organizationId }: { organizationId: string }) {
+export function WidgetView() {
   return (
     <main className="flex min-h-screen size-full flex-col overflow-hidden rounded-xl border bg-muted">
       <WidgetAuthScreen />

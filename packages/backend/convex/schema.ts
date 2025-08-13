@@ -11,7 +11,7 @@ export default defineSchema({
       v.object({
         userAgent: v.optional(v.string()),
         language: v.optional(v.string()),
-        languages: v.optional(v.string()),
+        languages: v.optional(v.array(v.string())),
         platform: v.optional(v.string()),
         vendor: v.optional(v.string()),
         screenResolution: v.optional(v.string()),

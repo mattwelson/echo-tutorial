@@ -17,8 +17,7 @@
     "@workspace/backend": "workspace:*",
     "@workspace/ui": "workspace:*",
     "@xstate/react": "^6.0.0",
-    "convex": "^1.25.4",
-    "date-fns": "^4.1.0",
+    "convex": "catalog:",
     "lucide-react": "catalog:",
     "next": "15.4.2-canary.30",
     "next-themes": "^0.4.4",
@@ -26,7 +25,7 @@
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-hook-form": "catalog:",
-    "xstate": "^5.20.2",
+    "xstate": "catalog:",
     "zod": "catalog:"
   },
   "devDependencies": {
@@ -35,6 +34,6 @@
     "@types/react-dom": "^19",
     "@workspace/eslint-config": "workspace:^",
     "@workspace/typescript-config": "workspace:*",
-    "typescript": "^5.7.3"
+    "typescript": "catalog:"
   }
 }

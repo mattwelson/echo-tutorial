@@ -1,3 +1,5 @@
+"use client";
+
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -15,12 +17,11 @@ import { Input } from "@workspace/ui/components/input";
 import { useMutation } from "convex/react";
 import { api } from "@workspace/backend/_generated/api";
 import { useQueryState } from "nuqs";
-import { userAgent } from "next/server";
-import { Doc } from "@workspace/backend/_generated/dataModel";
+import type { Doc } from "@workspace/backend/_generated/dataModel";
 
 const formSchema = z.object({
-  name: z.string().min(1, "Name is required"),
-  email: z.string().email("Invalid email"),
+  name: z.string().trim().min(1, "Name is required"),
+  email: z.email("Invalid email").trim().toLowerCase(),
 });
 
 export function WidgetAuthScreen() {
@@ -43,7 +44,7 @@ export function WidgetAuthScreen() {
     const metadata = {
       userAgent: navigator.userAgent,
       language: navigator.language,
-      languages: navigator.languages.join(", "),
+      languages: navigator.languages as string[],
       platform: navigator.platform,
       vendor: navigator.vendor,
       screenResolution: `${window.screen.width}x${window.screen.height}`,
