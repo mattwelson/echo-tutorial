@@ -20,6 +20,10 @@
     "test": {
       "cache": false,
       "persistent": false
+    },
+    "test:ui": {
+      "cache": false,
+      "persistent": true
     }
   }
 }
