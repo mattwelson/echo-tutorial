@@ -3,17 +3,23 @@
   "type": "module",
   "scripts": {
     "dev": "convex dev",
-    "setup": "convex dev --until-success"
+    "setup": "convex dev --until-success",
+    "test": "vitest",
+    "test:ui": "vitest --ui"
   },
   "exports": {
     "./convex": "./convex/**/*.ts"
   },
   "devDependencies": {
     "@types/node": "^20",
+    "@vitest/ui": "^3.2.4",
     "@workspace/typescript-config": "workspace:*",
-    "typescript": "latest"
+    "typescript": "catalog:",
+    "vitest": "^3.2.4"
   },
   "dependencies": {
-    "convex": "^1.25.4"
+    "convex": "catalog:",
+    "date-fns": "^4.1.0",
+    "effect": "^3.17.7"
   }
 }
