@@ -135,6 +135,9 @@ importers:
       '@xstate/react':
         specifier: ^6.0.0
         version: 6.0.0(@types/react@19.0.10)(react@19.0.0)(xstate@5.20.2)
+      '@xstate/store':
+        specifier: ^3.9.0
+        version: 3.9.0(react@19.0.0)
       convex:
         specifier: 'catalog:'
         version: 1.25.4(@clerk/clerk-react@5.38.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)
@@ -2044,6 +2047,17 @@ packages:
       xstate: ^5.20.0
     peerDependenciesMeta:
       xstate:
+        optional: true
+
+  '@xstate/store@3.9.0':
+    resolution: {integrity: sha512-GW3u7LJeCRTlCH7HFpBv0SzY9q5tDuuK9ugfdRFULWNlcOoRkzIhPeKCcH2sNkhJhp4cgmK0Bkl4LF7O3ki7Jw==}
+    peerDependencies:
+      react: ^18.2.0 || ^19.0.0
+      solid-js: ^1.7.6
+    peerDependenciesMeta:
+      react:
+        optional: true
+      solid-js:
         optional: true
 
   '@xtuc/ieee754@1.2.0':
@@ -6296,6 +6310,10 @@ snapshots:
       xstate: 5.20.2
     transitivePeerDependencies:
       - '@types/react'
+
+  '@xstate/store@3.9.0(react@19.0.0)':
+    optionalDependencies:
+      react: 19.0.0
 
   '@xtuc/ieee754@1.2.0': {}
 
