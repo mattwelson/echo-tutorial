@@ -7,6 +7,7 @@
     "error",
     "vapi",
     "widget/ui",
-    "widget/data"
+    "widget/data",
+    "backend"
   ]
 }
