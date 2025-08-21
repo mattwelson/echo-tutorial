@@ -1,16 +1,18 @@
 "use client";
 
-import { WidgetAuthScreen } from "../screens/widget-auth-screen";
-import { screenAtom } from "@/modules/widget/atoms/widget-atoms";
-import { useAtom } from "@xstate/store/react";
+import { WidgetAuthScreen } from "@/modules/widget/ui/screens/widget-auth-screen";
+import { WidgetErrorScreen } from "@/modules/widget/ui/screens/widget-error-screen";
+import { WidgetLoadingScreen } from "@/modules/widget/ui/screens/widget-loading-screen";
+import { routerStore } from "@/modules/widget/atoms/widget-atoms";
+import { useSelector } from "@xstate/store/react";
 
 export function WidgetView() {
-  const screen = useAtom(screenAtom);
+  const screen = useSelector(routerStore, (state) => state.context.screen);
 
   const screenComponents = {
-    error: <p>TODO</p>,
+    error: <WidgetErrorScreen />,
     auth: <WidgetAuthScreen />,
-    loading: <p>TODO</p>,
+    loading: <WidgetLoadingScreen />,
     selection: <p>TODO</p>,
     voice: <p>TODO</p>,
     inbox: <p>TODO</p>,

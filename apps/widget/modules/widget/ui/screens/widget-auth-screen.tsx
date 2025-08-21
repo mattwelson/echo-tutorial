@@ -16,8 +16,9 @@ import {
 import { Input } from "@workspace/ui/components/input";
 import { useMutation } from "convex/react";
 import { api } from "@workspace/backend/_generated/api";
-import { useQueryState } from "nuqs";
 import type { Doc } from "@workspace/backend/_generated/dataModel";
+import { useSelector } from "@xstate/store/react";
+import { routerStore } from "@/modules/widget/atoms/widget-atoms";
 
 const formSchema = z.object({
   name: z.string().trim().min(1, "Name is required"),
@@ -34,7 +35,10 @@ export function WidgetAuthScreen() {
   });
 
   const createContactSession = useMutation(api.public.contactSessions.create);
-  const [organizationId] = useQueryState("organizationId");
+  const organizationId = useSelector(
+    routerStore,
+    (state) => state.context.organizationId
+  );
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     if (!organizationId) {
@@ -63,7 +67,9 @@ export function WidgetAuthScreen() {
       metadata,
     });
 
-    console.log({ contactSessionId });
+    routerStore.trigger.setContactSessionId({
+      contactSessionId,
+    });
   }
 
   return (

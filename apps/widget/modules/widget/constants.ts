@@ -10,3 +10,7 @@ export const WIDGET_SCREENS = [
 ] as const;
 
 export const CONTACT_SESSION_KEY = "echo-contact-session";
+
+export function getContactSessionKey(organizationId: string) {
+  return [CONTACT_SESSION_KEY, organizationId].join("-");
+}
