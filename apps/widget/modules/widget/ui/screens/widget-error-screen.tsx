@@ -20,7 +20,7 @@ export function WidgetErrorScreen() {
       </WidgetHeader>
       <div className="flex flex-1 flex-col items-center justify-center gap-4 p-4 text-muted-foreground">
         <AlertTriangle className="size-12" />
-        <p className="text-sm">{errorMessage ?? "Unvalid configuration"}</p>
+        <p className="text-sm">{errorMessage ?? "Invalid configuration"}</p>
       </div>
     </>
   );
