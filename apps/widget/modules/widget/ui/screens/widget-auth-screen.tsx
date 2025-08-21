@@ -72,6 +72,12 @@ export function WidgetAuthScreen() {
     });
   }
 
+  if (organizationId) {
+    routerStore.trigger.setError({ message: "Organization ID is required" });
+    routerStore.trigger.navigate({ to: "error" });
+    return null;
+  }
+
   return (
     <>
       <WidgetHeader>
