@@ -3,17 +3,19 @@
 import { WidgetScreen } from "@/modules/widget/types";
 import { createStore } from "@xstate/store";
 import { getContactSessionKey } from "@/modules/widget/constants";
+import { Id } from "@workspace/backend/_generated/dataModel";
 
 export const routerStore = createStore({
   context: {
     screen: "loading" as WidgetScreen,
     errorMessage: undefined as string | undefined,
     organizationId: undefined as string | undefined,
-    contactSessionId: undefined as string | undefined,
+    contactSessionId: undefined as Id<"contactSessions"> | undefined,
+    conversationId: undefined as Id<"conversations"> | undefined,
   },
   emits: {
     updateContactSessionId(payload: {
-      contactSessionId: string;
+      contactSessionId: Id<"contactSessions">;
       organizationId: string;
     }) {
       localStorage.setItem(
@@ -23,13 +25,10 @@ export const routerStore = createStore({
     },
   },
   on: {
-    navigate: (context, event: { to: WidgetScreen }) => ({
+    navigate: (context, event: { to: WidgetScreen; error?: string }) => ({
       ...context,
       screen: event.to,
-    }),
-    setError: (context, event: { message: string }) => ({
-      ...context,
-      errorMessage: event.message,
+      errorMessage: event.error,
     }),
     clearError: (context) => ({
       ...context,
@@ -39,10 +38,15 @@ export const routerStore = createStore({
       ...context,
       organizationId: event.organizationId,
       contactSessionId:
-        localStorage.getItem(getContactSessionKey(event.organizationId)) ??
-        undefined,
+        (localStorage.getItem(
+          getContactSessionKey(event.organizationId)
+        ) as Id<"contactSessions">) ?? undefined,
     }),
-    setContactSessionId(context, event: { contactSessionId: string }, enq) {
+    setContactSessionId(
+      context,
+      event: { contactSessionId: Id<"contactSessions"> },
+      enq
+    ) {
       if (!context.organizationId) return;
 
       enq.emit.updateContactSessionId({
@@ -55,5 +59,18 @@ export const routerStore = createStore({
         contactSessionId: event.contactSessionId,
       };
     },
+    setConversationId: (
+      context,
+      event: { conversationId: Id<"conversations"> }
+    ) => ({
+      ...context,
+      conversationId: event.conversationId,
+    }),
   },
+});
+
+routerStore.inspect((inspectionEvent) => {
+  // type: '@xstate.snapshot' or
+  // type: '@xstate.event'
+  console.log(inspectionEvent);
 });

@@ -3,6 +3,8 @@
 import { WidgetAuthScreen } from "@/modules/widget/ui/screens/widget-auth-screen";
 import { WidgetErrorScreen } from "@/modules/widget/ui/screens/widget-error-screen";
 import { WidgetLoadingScreen } from "@/modules/widget/ui/screens/widget-loading-screen";
+import { WidgetSelectionScreen } from "@/modules/widget/ui/screens/widget-selection-screen";
+import { WidgetChatScreen } from "@/modules/widget/ui/screens/widget-chat-screen";
 import { routerStore } from "@/modules/widget/atoms/widget-atoms";
 import { useSelector } from "@xstate/store/react";
 
@@ -13,10 +15,10 @@ export function WidgetView() {
     error: <WidgetErrorScreen />,
     auth: <WidgetAuthScreen />,
     loading: <WidgetLoadingScreen />,
-    selection: <p>TODO</p>,
+    selection: <WidgetSelectionScreen />,
     voice: <p>TODO</p>,
     inbox: <p>TODO</p>,
-    chat: <p>TODO</p>,
+    chat: <WidgetChatScreen />,
     contact: <p>TODO</p>,
   };
 
