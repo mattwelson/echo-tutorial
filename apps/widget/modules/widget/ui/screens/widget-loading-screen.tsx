@@ -49,8 +49,10 @@ export function WidgetLoadingScreen() {
   useEffect(() => {
     if (step !== "organization") return;
     if (!organizationId) {
-      routerStore.trigger.setError({ message: "Organization ID is required" });
-      routerStore.trigger.navigate({ to: "error" });
+      routerStore.trigger.navigate({
+        to: "error",
+        error: "Organization ID is required",
+      });
       return;
     }
 
@@ -61,20 +63,20 @@ export function WidgetLoadingScreen() {
           routerStore.trigger.setOrganizationId({ organizationId });
           setStep("session");
         } else {
-          routerStore.trigger.setError({
-            message: result.reason ?? "Something went wrong",
+          routerStore.trigger.navigate({
+            to: "error",
+            error: result.reason ?? "Something went wrong",
           });
-          routerStore.trigger.navigate({ to: "error" });
         }
       })
       .catch((err) => {
-        routerStore.trigger.setError({
-          message:
+        routerStore.trigger.navigate({
+          to: "error",
+          error:
             err instanceof Error
               ? err.message
               : "Organization validation failed",
         });
-        routerStore.trigger.navigate({ to: "error" });
       });
   }, [step, organizationId, routerStore.trigger]);
 
@@ -92,7 +94,7 @@ export function WidgetLoadingScreen() {
 
     setLoadingMessage("Validating session...");
     validateContactSession({
-      contactSessionId: contactSessionId as Id<"contactSessions">,
+      contactSessionId: contactSessionId,
     })
       .then((result) => {
         if (result.valid) {
@@ -102,20 +104,18 @@ export function WidgetLoadingScreen() {
             contactSessionId: contactSessionId,
           });
         } else {
-          routerStore.trigger.setError({
-            message: result.reason ?? "Something went wrong",
-          });
-          routerStore.trigger.navigate({ to: "error" });
+          setStep("done");
+          setSessionValid(false);
         }
       })
       .catch((err) => {
-        routerStore.trigger.setError({
-          message:
+        routerStore.trigger.navigate({
+          to: "error",
+          error:
             err instanceof Error
               ? err.message
               : "Contact session validation failed",
         });
-        routerStore.trigger.navigate({ to: "error" });
       });
   }, [step, organizationId, contactSessionId, routerStore.trigger]);
 

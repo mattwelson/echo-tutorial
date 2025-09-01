@@ -70,11 +70,16 @@ export function WidgetAuthScreen() {
     routerStore.trigger.setContactSessionId({
       contactSessionId,
     });
+    routerStore.trigger.navigate({
+      to: "selection",
+    });
   }
 
-  if (organizationId) {
-    routerStore.trigger.setError({ message: "Organization ID is required" });
-    routerStore.trigger.navigate({ to: "error" });
+  if (!organizationId) {
+    routerStore.trigger.navigate({
+      to: "error",
+      error: "Organization ID is required",
+    });
     return null;
   }
 
